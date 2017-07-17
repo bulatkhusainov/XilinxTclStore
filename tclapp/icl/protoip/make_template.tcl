@@ -1441,7 +1441,7 @@ append tmp_line "		" $i "_out_int\[i\]=0;"
 puts $file $tmp_line
 foreach j $input_vectors {
 	
-puts $file "		loop_$j : for(int i_$j = 0; i_$j <[string toupper $j]_IN_LENGTH; i_$j++)"
+puts $file "		loop_$count_i\_$j : for(int i_$j = 0; i_$j <[string toupper $j]_IN_LENGTH; i_$j++)"
 puts $file "		\{"		
 set tmp_line ""
 append tmp_line "			" $i "_out_int\[i\]=" $i "_out_int\[i\] + (data_t_" $i "_out)" $j "_in_int\[i_" $j "\];"
