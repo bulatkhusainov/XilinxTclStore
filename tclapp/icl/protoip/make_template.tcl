@@ -2030,10 +2030,10 @@ foreach i $input_vectors {
 		append tmp_line "#if FLOAT_FIX_[string toupper $i]_IN == 1"
 		puts $file $tmp_line
 		set tmp_line ""	
-		append tmp_line "	typedef ap_fixed<[string toupper $i]_IN_INTEGERLENGTH+[string toupper $i]_IN_FRACTIONLENGTH,[string toupper $i]_IN_INTEGERLENGTH,AP_TRN_ZERO,AP_SAT> data_t_" $i "_in;"
+		append tmp_line "	typedef ap_fixed<[string toupper $i]_IN_INTEGERLENGTH+[string toupper $i]_IN_FRACTIONLENGTH,[string toupper $i]_IN_INTEGERLENGTH,AP_TRN,AP_WRAP> data_t_" $i "_in;"
 		puts $file $tmp_line
 		set tmp_line ""	
-		append tmp_line "	typedef ap_fixed<32,32-[string toupper $i]_IN_FRACTIONLENGTH,AP_TRN_ZERO,AP_SAT> data_t_interface_" $i "_in;"
+		append tmp_line "	typedef ap_fixed<32,32-[string toupper $i]_IN_FRACTIONLENGTH,AP_TRN,AP_WRAP> data_t_interface_" $i "_in;"
 		puts $file $tmp_line
 		set tmp_line ""	
 		append tmp_line "#endif"
@@ -2066,10 +2066,10 @@ foreach i $output_vectors {
 		append tmp_line "#if FLOAT_FIX_[string toupper $i]_OUT == 1 "
 		puts $file $tmp_line
 		set tmp_line ""	
-		append tmp_line "	typedef ap_fixed<[string toupper $i]_OUT_INTEGERLENGTH+[string toupper $i]_OUT_FRACTIONLENGTH,[string toupper $i]_OUT_INTEGERLENGTH,AP_TRN_ZERO,AP_SAT> data_t_" $i "_out;"
+		append tmp_line "	typedef ap_fixed<[string toupper $i]_OUT_INTEGERLENGTH+[string toupper $i]_OUT_FRACTIONLENGTH,[string toupper $i]_OUT_INTEGERLENGTH,AP_TRN,AP_WRAP> data_t_" $i "_out;"
 		puts $file $tmp_line
 		set tmp_line ""	
-		append tmp_line "	typedef ap_fixed<32,32-[string toupper $i]_OUT_FRACTIONLENGTH,AP_TRN_ZERO,AP_SAT> data_t_interface_" $i "_out;"
+		append tmp_line "	typedef ap_fixed<32,32-[string toupper $i]_OUT_FRACTIONLENGTH,AP_TRN,AP_WRAP> data_t_interface_" $i "_out;"
 		puts $file $tmp_line
 		set tmp_line ""	
 		append tmp_line "#endif"
